@@ -11,11 +11,10 @@ class Layout extends React.Component {
         </head>
         <body>
           <header>
-            <h1>This is the page header</h1>
+            <h1>Writing Prompts Daily</h1>
           </header>
           <main>{this.props.children}</main>
           <footer>
-            <h1>This is my footer</h1>
           </footer>
         </body>
       </html>

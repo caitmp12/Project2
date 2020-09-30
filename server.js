@@ -19,6 +19,7 @@ const mongoose = require("./db/dbconn");
 // ROUTERS
 const authRouter = require("./controllers/auth");
 const testRouter = require("./controllers/test");
+const genRouter = require("./controllers/gen");
 
 // OTHER IMPORTS
 const session = require("express-session");
@@ -55,11 +56,12 @@ app.use(morgan("tiny")); //logging
 //Routes and Routers
 //////////////
 app.get("/", (req, res) => {
-  res.render("index.jsx", { hello: "Hello World" });
+  res.render("index.jsx");
 });
 
 app.use("/auth", authRouter);
 app.use("/test", testRouter);
+app.use("/gen", genRouter)
 
 ////////////////////////
 //APP LISTENER
