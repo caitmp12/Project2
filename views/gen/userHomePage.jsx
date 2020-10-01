@@ -6,13 +6,9 @@ class UserHomePage extends React.Component {
         const { prompts } = this.props
         console.log(prompts)
         return (<Layout title="Index">
-           <h1>hi</h1>
-            <a href="/gen/write"><button>Write Today's Prompt?</button></a>
-            <ul>
-                {prompts.map((prompt, index) => {
-                return <a href={`/prompts/${index}`}><li>{prompt}</li></a>
-                })}
-            </ul>
+            <h2>Today's writing prompt is...</h2>
+            <h3>{prompts[Math.floor(Math.random()*prompts.length)]}</h3>
+            <a href="/gen/write"><button>Write Today's Prompt</button></a>
             </Layout>)
         }
     }
