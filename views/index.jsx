@@ -10,7 +10,7 @@ class Index extends React.Component {
           <li>CP Match</li>
           <li>Resources</li>
         </ul>
-        <h1> Welcome to Writing Prompts Daily! For today's prompt please Log In or Sign Up.<br/>
+        <h1> Welcome to Writing Prompts Daily! For today's prompt please <a href="/auth/login">Log In</a> or <a href="/auth/signup">Sign Up</a><br/>
         Happy Writing!
         </h1>
       </Layout>
@@ -19,3 +19,5 @@ class Index extends React.Component {
 }
 
 module.exports = Index;
+
+

@@ -5,11 +5,21 @@ class UserHomePage extends React.Component {
     render() {
         const { prompts } = this.props
         console.log(prompts)
+
+        const today = prompts[Math.floor(Math.random() * prompts.length)]
+
+        const { posts } = this.props 
         return (<Layout title="Index">
-            <h2>Today's writing prompt is...</h2>
-            <h3>{prompts[Math.floor(Math.random()*prompts.length)]}</h3>
+           <ul>
+                <li>Saved Resources</li>
+                <li>Community</li>
+            </ul>
+             <h2>Today's writing prompt is...</h2>
+            <h3>{today}</h3>
             <a href="/gen/write"><button>Write Today's Prompt</button></a>
-            </Layout>)
+            <h3>Notebook</h3>
+            <h3>{posts}</h3>
+        </Layout>)
         }
     }
 
