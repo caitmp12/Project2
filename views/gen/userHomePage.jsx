@@ -3,19 +3,18 @@ const Layout = require("../layout.jsx");
 
 class UserHomePage extends React.Component {
     render() {
-        return (
-            <Layout title="The Title!">
-                <ul>
-                    <li>Community</li>
-                    <li>CP Match</li>
-                    <li>Resources</li>
-                </ul>
-                <h1> Welcome to Writing Prompts Daily! For today's prompt please Log In or Sign Up.<br />
-        Happy Writing!
-        </h1>
-            </Layout>
-        );
+        const { prompts } = this.props
+        console.log(prompts)
+        return (<Layout title="Index">
+           <h1>hi</h1>
+            <a href="/gen/write"><button>Write Today's Prompt?</button></a>
+            <ul>
+                {prompts.map((prompt, index) => {
+                return <a href={`/prompts/${index}`}><li>{prompt}</li></a>
+                })}
+            </ul>
+            </Layout>)
+        }
     }
-}
 
 module.exports = UserHomePage;
