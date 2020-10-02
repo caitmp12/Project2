@@ -27,8 +27,9 @@ class UserHomePage extends React.Component {
                                 <li>
                                     <a href={`/gen/post/${posts._id}`}>{posts.title}</a><br/>
                                     {posts.post}<br/>
-                                    <form action={`/gen/post/${posts._id}?_method=DELETE`} method="POST"/>              
-                                    <input type="submit" value="DELETE"/>
+                                    <form action={`/gen/post/${posts._id}?_method=DELETE`} method="POST">              
+                                    <input type="submit" value="DELETE"></input>
+                                    </form>
                                 </li>
                             </ul>
                         )
