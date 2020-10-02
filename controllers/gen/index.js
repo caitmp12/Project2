@@ -4,13 +4,15 @@ const Posts = require("../../models/posts")
 
 const router = Router()
 
+
+
 //Index, User Home Page --> Daily Writing Prompt
 router.get("/user", (req, res) => {
-    // Posts.find({}, (error, allPosts)=>{
-        // res.render("gen/userHomePage.jsx", 
-        // {posts: allPosts}, 
-    // })
-    res.render("gen/userHomePage.jsx", {prompts})
+    Posts.find({}, (error, allPosts)=>{
+        res.render("gen/userHomePage.jsx", 
+        {posts: allPosts, prompts}, 
+    )})
+    // res.render("gen/userHomePage.jsx", {prompts})
 })
 
 //New, User writes for Daily Writing Prompt
@@ -27,29 +29,39 @@ router.post("/user/", (req, res) => {
 })
 
 
-// app.post("/fruits", (req, res) => {
-//     if (req.body.readyToEat === "on") {
-//         req.body.readyToEat = true
-//     } else {
-//         req.body.readyToEat = false
-//     }
-//     Fruit.create(req.body, (error, createdFruit) => {
-//         // res.send(createdFruit)
-//         res.redirect("/fruits")
-//     })
-//     // res.send(req.body)
-// })
-
 //Show, User can view their post
-router.get("/posts", (req, res) => {
-    // res.send("3 working")
-    res.render("gen/show.jsx")
+router.get("/post", (req, res) => {
+    // res.render("gen/show.jsx", {
+    //     posts: Posts[req.params.index],
+    //     index: req.params.index,
+// })
+    Posts.find({}, (error, allPosts) => {
+        res.render("gen/show.jsx",
+            { posts: allPosts, prompts },
+        )
+    })
+    
 })
+
 
 //Edit, User can edit what they've written
 router.get("/edit", (req, res) => {
     // res.send("4 working")
     res.render("gen/edit.jsx")
+})
+
+//Edit
+router.get("/:index/edit", (req, res) => {
+    res.render("todo/edit.jsx", {
+        index: req.params.index,
+        todo: todos[req.params.index]
+    })
+})
+
+//Update - takes info from form and updates tood
+router.put("/:index", (req, res) => {
+    todos[req.params.index] = req.body;
+    res.redirect("/todo/")
 })
 
 //Delete, User can delete their post

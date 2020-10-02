@@ -6,11 +6,12 @@ class Write extends React.Component {
         const { prompts } = this.props
         // console.log(prompts)
         return (<Layout title="Index">
-            <form action="/show/" method="post">
+            <form action="/gen/user" method="post">
                 <label for="writingPrompt">Prompt Rewrite</label><br />
-                <textarea id="writePrompt" name="writePrompt" rows="7" cols="60"></textarea> <br />
-                <input type="submit" value="Post" />
-            </form>
+                Title: <input type="text" name="title" /><br />
+                Post: <textarea id="post" name="post" rows="7" cols="60"></textarea> <br />
+                <input type="submit" value="Update" />
+                </form>
         </Layout>)
     }
 }
