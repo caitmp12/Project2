@@ -30,43 +30,68 @@ router.post("/user/", (req, res) => {
 
 
 //Show, User can view their post
-router.get("/post", (req, res) => {
-    // res.render("gen/show.jsx", {
-    //     posts: Posts[req.params.index],
-    //     index: req.params.index,
+// router.get("/post", (req, res) => {
+//     res.render("gen/show.jsx", {
+//         posts: Posts[req.params.index],
+//         index: req.params.index,
 // })
-    Posts.find({}, (error, allPosts) => {
-        res.render("gen/show.jsx",
-            { posts: allPosts, prompts },
-        )
-    })
+    // Posts.find({}, (error, allPosts) => {
+    //     res.render("gen/show.jsx",
+    //         { posts: allPosts, prompts },
+    //     )
+    // })
     
+// })
+
+router.get("/post/:id", (req, res) => {
+    Posts.findById(req.params.id, (error, newPost) => {
+        res.render("gen/show", {
+            posts: newPost
+        })
+    })
 })
 
-
 //Edit, User can edit what they've written
-router.get("/edit", (req, res) => {
-    // res.send("4 working")
-    res.render("gen/edit.jsx")
+//Update, User can update post with edits made
+router.get("/edit/:id", (req, res) => {
+    Posts.findById(req.params.id, (error, newPost) => {
+        res.render("gen/edit", {
+            posts: newPost
+        })
+    })
+})
+
+router.put("/edit/:id", (req, res) => {
+    Posts.findOneAndUpdate(req.params.id, req.body, (error, updatedPost) => {
+        res.redirect("/gen/user")
+    })
 })
 
 //Edit
-router.get("/:index/edit", (req, res) => {
-    res.render("todo/edit.jsx", {
-        index: req.params.index,
-        todo: todos[req.params.index]
-    })
-})
+// router.get("/:index/edit", (req, res) => {
+//     res.render("todo/edit.jsx", {
+//         index: req.params.index,
+//         todo: todos[req.params.index]
+//     })
+// })
 
 //Update - takes info from form and updates tood
-router.put("/:index", (req, res) => {
-    todos[req.params.index] = req.body;
-    res.redirect("/todo/")
-})
+// router.put("/:index", (req, res) => {
+//     todos[req.params.index] = req.body;
+//     res.redirect("/todo/")
+// })
 
 //Delete, User can delete their post
-router.get("/delete", (req, res) => {
-    // res.send("5 working")
-})
+// router.delete("/post/:id", (req, res) => {
+//     res.send("deleting")
+// })
+
+ router.delete("/post/:id", (req, res) => {
+     Posts.findByIdAndDelete(req.params.id, (err, data)=>{
+         res.redirect("/gen/user")
+     })
+ })
+
+
 
 module.exports = router
