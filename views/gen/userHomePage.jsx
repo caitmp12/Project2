@@ -44,6 +44,9 @@ class UserHomePage extends React.Component {
                     })
                 }
             </h3>
+            <footer>
+                <a href="/auth/logout" id="logout">Logout of Account</a>
+            </footer>
         </Layout>)
         }
     }

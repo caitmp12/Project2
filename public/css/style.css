@@ -43,8 +43,13 @@ body {
 }
 
 
+
 a {
     font-size: 35px;  
     color: rgba(252, 221, 221, 0.719); 
     text-decoration: none;
+}
+
+#logout {
+    font-size: 12px;
 }
