@@ -11,19 +11,27 @@ class UserHomePage extends React.Component {
         const { posts } = this.props 
         console.log(posts)
         return (<Layout title="Index">
-           <ul>
-                <li>Saved Resources</li>
+           <ul class="nav">
+                <li>Account</li>               
+                <li>Saved Resources</li> 
                 <li>Community</li>
             </ul>
+            <br/>
+            <br/>
+            <div class="prompt">
              <h2>Today's writing prompt is...</h2>
-            <h3>{today}</h3>
+            <h3 class ="today">{today}</h3>
+            </div>
             <a href="/gen/write"><button>Write Today's Prompt</button></a>
-            <h3>Notebook</h3>
+            <br/>
+            <br/>
+            <br/>
+            <h3 class="notebook">Notebook</h3>
             <h3>
                 {
                     posts.map((posts, i) => {
                         return (
-                            <ul>
+                            <ul id="post">
                                 <li>
                                     <a href={`/gen/post/${posts._id}`}>{posts.title}</a><br/>
                                     {posts.post}<br/>

@@ -29,7 +29,7 @@ router.post("/user/", (req, res) => {
 })
 
 
-
+//Show
 router.get("/post/:id", (req, res) => {
     Posts.findById(req.params.id, (error, newPost) => {
         res.render("gen/show", {

@@ -1,3 +1,50 @@
-h1 {
-    color: black;
+body {
+    background-image: url("https://i.pinimg.com/originals/a8/8e/8b/a88e8b0f3064dea98a8c16dbed9fc247.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Architects Daughter', cursive;
+    color: rgba(250, 235, 235, 0.719); 
+}
+
+.site-name {
+    color: rgba(252, 221, 221, 0.719);
+    font-size: 60px; 
+    text-align: center;
+    background-image: url("https://thumbs.dreamstime.com/b/closeup-permanent-black-marker-doodles-pattern-texture-brushes-white-background-black-marker-doodles-texture-white-169914275.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 8px 8px white inset;
+    border-radius: 10%; 
+}
+
+.nav {
+    display: inline;
+    text-align: center; 
+}
+
+.prompt {
+    font-size: 35px; 
+    background-color: black;
+    opacity: .5; 
+    border-radius: 3%; 
+    color: white; 
+}
+
+.today {
+    font-size: 28px;
+    text-align: center;
+}
+
+
+.notebook {
+    font-size: 35px;  
+    color: rgba(252, 221, 221, 0.719); 
+    text-align: center;  
+}
+
+
+a {
+    font-size: 35px;  
+    color: rgba(252, 221, 221, 0.719); 
+    text-decoration: none;
 }
