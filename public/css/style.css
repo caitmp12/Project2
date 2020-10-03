@@ -53,3 +53,23 @@ a {
 #logout {
     font-size: 12px;
 }
+
+.welcome-page {
+    text-align: center;
+    background-color: black; 
+    opacity: .5; 
+    border-radius: 5%;   
+    color: white;  
+}
+
+.top-background {
+    background-color: black;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#single-post {
+    text-align: center;
+    font-size: 30px;
+}
+

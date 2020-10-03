@@ -18,6 +18,7 @@ class UserHomePage extends React.Component {
             </ul>
             <br/>
             <br/>
+            <div class="top-background">
             <div class="prompt">
              <h2>Today's writing prompt is...</h2>
             <h3 class ="today">{today}</h3>
@@ -26,6 +27,7 @@ class UserHomePage extends React.Component {
             <br/>
             <br/>
             <br/>
+            <hr id="page-break"/>
             <h3 class="notebook">Notebook</h3>
             <h3>
                 {
@@ -44,6 +46,7 @@ class UserHomePage extends React.Component {
                     })
                 }
             </h3>
+            </div>
             <footer>
                 <a href="/auth/logout" id="logout">Logout of Account</a>
             </footer>

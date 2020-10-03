@@ -7,14 +7,19 @@ class Show extends React.Component {
         const { posts } = this.props
         console.log(posts)
         return (<Layout title="Index">
-            <h3>Notebook</h3>
-            <ul>
+            <br/>
+            <br/>
+            <br/>
+            <div class="top-background">
+            <br/>   
+            <ul id="single-post">
                 <li>
                     <a href="/gen/post">{posts.title}</a><br />
                     {posts.post}
                 </li>
             </ul>  
-            <a href={`/gen/edit/${posts._id}`}><button>Edit Post</button></a>           
+            <a href={`/gen/edit/${posts._id}`}><button>Edit Post</button></a>  
+            </div>         
         </Layout>)
     }
 }
